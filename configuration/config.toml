@@ -1,0 +1,11 @@
+[database]
+host = "127.0.0.1"
+port = "5432"
+database = "users"
+user = "postgres"
+password = "616161"
+dbDriver = "postgres"
+
+[api]
+host = "localhost"
+port = "6161"
