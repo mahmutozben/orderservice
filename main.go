@@ -6,16 +6,7 @@ import (
 	configuration "order-service/configuration"
 	"order-service/infrastructure/persistence"
 	interfaces "order-service/interfaces"
-
-	"github.com/joho/godotenv"
 )
-
-func init() {
-	//To load our environmental variables.
-	if err := godotenv.Load(); err != nil {
-		log.Println("no env gotten")
-	}
-}
 
 func main() {
 	conf, err := configuration.LoadConfiguration()

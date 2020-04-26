@@ -20,13 +20,18 @@ const (
 	Cancelled OrderStatus = 4
 )
 
-func NewOrder(address, description string, status OrderStatus) Order {
+func NewOrder(address, description string) Order {
 	order := Order{}
 	order.Address = address
 	order.Description = description
-	order.Status = status
+	order.Status = Initial
 	order.OrderDate = time.Now()
 	order.OrderItems = []OrderItem{}
 
 	return order
+}
+
+func (order *Order) AddOrderItem(productId int, productName string, unitPrice float64, discount int) {
+	orderItem := OrderItem{ProductId: productId, ProductName: productName, UnitPrice: unitPrice, Discount: discount}
+	order.OrderItems = append(order.OrderItems, orderItem)
 }
